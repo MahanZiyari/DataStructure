@@ -1,0 +1,10 @@
+C:\Users\FATH\source\repos\Stack List Implementation\bin\Debug\netcoreapp2.1\Stack List Implementation.deps.json
+C:\Users\FATH\source\repos\Stack List Implementation\bin\Debug\netcoreapp2.1\Stack List Implementation.runtimeconfig.json
+C:\Users\FATH\source\repos\Stack List Implementation\bin\Debug\netcoreapp2.1\Stack List Implementation.runtimeconfig.dev.json
+C:\Users\FATH\source\repos\Stack List Implementation\bin\Debug\netcoreapp2.1\Stack List Implementation.dll
+C:\Users\FATH\source\repos\Stack List Implementation\bin\Debug\netcoreapp2.1\Stack List Implementation.pdb
+C:\Users\FATH\source\repos\Stack List Implementation\obj\Debug\netcoreapp2.1\Stack List Implementation.csproj.CoreCompileInputs.cache
+C:\Users\FATH\source\repos\Stack List Implementation\obj\Debug\netcoreapp2.1\Stack List Implementation.AssemblyInfoInputs.cache
+C:\Users\FATH\source\repos\Stack List Implementation\obj\Debug\netcoreapp2.1\Stack List Implementation.AssemblyInfo.cs
+C:\Users\FATH\source\repos\Stack List Implementation\obj\Debug\netcoreapp2.1\Stack List Implementation.dll
+C:\Users\FATH\source\repos\Stack List Implementation\obj\Debug\netcoreapp2.1\Stack List Implementation.pdb

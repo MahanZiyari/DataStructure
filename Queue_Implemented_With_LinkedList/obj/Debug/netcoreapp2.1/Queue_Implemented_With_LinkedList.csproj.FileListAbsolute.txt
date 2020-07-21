@@ -1,0 +1,11 @@
+E:\programing\C#\Queue_Implemented_With_LinkedList\bin\Debug\netcoreapp2.1\Queue_Implemented_With_LinkedList.deps.json
+E:\programing\C#\Queue_Implemented_With_LinkedList\bin\Debug\netcoreapp2.1\Queue_Implemented_With_LinkedList.runtimeconfig.json
+E:\programing\C#\Queue_Implemented_With_LinkedList\bin\Debug\netcoreapp2.1\Queue_Implemented_With_LinkedList.runtimeconfig.dev.json
+E:\programing\C#\Queue_Implemented_With_LinkedList\bin\Debug\netcoreapp2.1\Queue_Implemented_With_LinkedList.dll
+E:\programing\C#\Queue_Implemented_With_LinkedList\bin\Debug\netcoreapp2.1\Queue_Implemented_With_LinkedList.pdb
+E:\programing\C#\Queue_Implemented_With_LinkedList\obj\Debug\netcoreapp2.1\Queue_Implemented_With_LinkedList.csprojAssemblyReference.cache
+E:\programing\C#\Queue_Implemented_With_LinkedList\obj\Debug\netcoreapp2.1\Queue_Implemented_With_LinkedList.csproj.CoreCompileInputs.cache
+E:\programing\C#\Queue_Implemented_With_LinkedList\obj\Debug\netcoreapp2.1\Queue_Implemented_With_LinkedList.AssemblyInfoInputs.cache
+E:\programing\C#\Queue_Implemented_With_LinkedList\obj\Debug\netcoreapp2.1\Queue_Implemented_With_LinkedList.AssemblyInfo.cs
+E:\programing\C#\Queue_Implemented_With_LinkedList\obj\Debug\netcoreapp2.1\Queue_Implemented_With_LinkedList.dll
+E:\programing\C#\Queue_Implemented_With_LinkedList\obj\Debug\netcoreapp2.1\Queue_Implemented_With_LinkedList.pdb

@@ -1,0 +1,11 @@
+E:\programing\C#\tree_functions\bin\Debug\netcoreapp2.1\tree_functions.deps.json
+E:\programing\C#\tree_functions\bin\Debug\netcoreapp2.1\tree_functions.runtimeconfig.json
+E:\programing\C#\tree_functions\bin\Debug\netcoreapp2.1\tree_functions.runtimeconfig.dev.json
+E:\programing\C#\tree_functions\bin\Debug\netcoreapp2.1\tree_functions.dll
+E:\programing\C#\tree_functions\bin\Debug\netcoreapp2.1\tree_functions.pdb
+E:\programing\C#\tree_functions\obj\Debug\netcoreapp2.1\tree_functions.csprojAssemblyReference.cache
+E:\programing\C#\tree_functions\obj\Debug\netcoreapp2.1\tree_functions.csproj.CoreCompileInputs.cache
+E:\programing\C#\tree_functions\obj\Debug\netcoreapp2.1\tree_functions.AssemblyInfoInputs.cache
+E:\programing\C#\tree_functions\obj\Debug\netcoreapp2.1\tree_functions.AssemblyInfo.cs
+E:\programing\C#\tree_functions\obj\Debug\netcoreapp2.1\tree_functions.dll
+E:\programing\C#\tree_functions\obj\Debug\netcoreapp2.1\tree_functions.pdb

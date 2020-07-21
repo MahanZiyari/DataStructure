@@ -3,7 +3,7 @@ import java.util.*;
 public class Main {
 
     public static void main(String[] args) {
-        String pre_exp = "*-A/BC-/AKL";
+        String pre_exp = "+^-^A*BCDT//EF+Gh";
         System.out.println("Postfix : " + preToPost(pre_exp));
     }
 
@@ -15,6 +15,7 @@ public class Main {
             case '-':
             case '/':
             case '*':
+            case '^':
                 return true;
         }
         return false;
