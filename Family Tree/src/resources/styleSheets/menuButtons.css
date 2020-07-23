@@ -1,0 +1,19 @@
+#createButton{
+    -fx-background-color: #616161;
+    -fx-background-image: url("../pictures/image.png");
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+}
+#createButton:hover{
+    -fx-blend-mode: overlay;
+}
+
+.button{
+    -fx-background-color: #616161;
+    -fx-background-radius: 20px;
+    -fx-border-radius: 20px;
+}
+
+.button:hover{
+    -fx-blend-mode: overlay;
+}

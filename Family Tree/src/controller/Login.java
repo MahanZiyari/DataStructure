@@ -1,38 +1,83 @@
 package controller;
 
+import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXDrawer;
+import com.jfoenix.controls.JFXTextField;
+import com.jfoenix.validation.NumberValidator;
+import com.jfoenix.validation.RequiredFieldValidator;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.input.MouseEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Hyperlink;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Pane;
 
-public class Login {
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class Login implements Initializable {
 
     @FXML
     private AnchorPane parent;
 
     @FXML
-    private Pane loginPane;
+    private JFXTextField nameTextField;
 
     @FXML
-    void loginPaneOnMouseEntered(MouseEvent event) {
-        loginPane.setStyle("-fx-background-color: #FDEE00");
-        parent.setStyle("-fx-background-color: #a107a7");
+    private JFXTextField familyTextField;
+
+    @FXML
+    private Hyperlink signupHyperLink;
+
+    @FXML
+    private JFXButton loginButton;
+
+    @FXML
+    private JFXDrawer signUpDrawer;
+
+    @FXML
+    private NumberValidator numValidator;
+
+    @FXML
+    private RequiredFieldValidator requiredValidator;
+    private SignUpDrawer drawerController;
+
+    @FXML
+    void familyTextFieldOnKeyTyped(KeyEvent event) {
+        familyTextField.validate();
     }
 
     @FXML
-    void loginPaneOnMouseExited(MouseEvent event) {
-        loginPane.setStyle("-fx-background-color: #a107a7");
-        parent.setStyle("-fx-background-color: #FDEE00");
+    void loginButtonOnAction(ActionEvent event) {
     }
 
     @FXML
-    void parentOnMouseEntered(MouseEvent event) {
-
+    void nameTextFieldOnKeyTyped(KeyEvent event) {
+        nameTextField.validate();
     }
 
     @FXML
-    void parentOnMouseExited(MouseEvent event) {
-
+    void signupHyperLinkOnAction(ActionEvent event) {
+        signUpDrawer.open();
+        drawerController.setDrawer(signUpDrawer);
     }
 
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        nameTextField.getValidators().addAll(requiredValidator);
+        familyTextField.getValidators().addAll(numValidator, requiredValidator);
+
+        AnchorPane anchorPane = null;
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/signUpDrawer.fxml"));
+            anchorPane = loader.load();
+            drawerController = loader.getController();
+            //System.out.println("drawerController = " + drawerController);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        signUpDrawer.setSidePane(anchorPane);
+    }
 }

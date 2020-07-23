@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDrawer?>
 <?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.validation.NumberValidator?>
+<?import com.jfoenix.validation.RequiredFieldValidator?>
 <?import javafx.geometry.Rectangle2D?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
@@ -12,7 +15,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="parent" onMouseEntered="#parentOnMouseEntered" onMouseExited="#parentOnMouseExited" prefHeight="505.0" prefWidth="835.0" style="-fx-background-color: #cccccc;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Login">
+<AnchorPane fx:id="parent" prefHeight="505.0" prefWidth="835.0" style="-fx-background-color: #cccccc;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Login">
    <children>
       <ImageView fitHeight="505.0" fitWidth="393.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="442.0" AnchorPane.topAnchor="0.0">
          <viewport>
@@ -37,10 +40,13 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <JFXTextField fx:id="nameTextField" labelFloat="true" layoutX="549.0" layoutY="163.0" promptText="Name" />
-      <JFXTextField labelFloat="true" layoutX="549.0" layoutY="240.0" promptText="Family Name" />
+      <JFXTextField fx:id="nameTextField" labelFloat="true" layoutX="549.0" layoutY="163.0" onKeyTyped="#nameTextFieldOnKeyTyped" promptText="Name" unFocusColor="BLACK" />
+      <JFXTextField fx:id="familyTextField" labelFloat="true" layoutX="549.0" layoutY="240.0" onKeyTyped="#familyTextFieldOnKeyTyped" promptText="Family Name" />
       <Hyperlink fx:id="signupHyperLink" layoutX="588.0" layoutY="369.0" onAction="#signupHyperLinkOnAction" text="Create your own family tree" />
       <Label layoutX="491.0" layoutY="372.0" text="new to my family?" />
       <JFXButton fx:id="loginButton" buttonType="RAISED" layoutX="581.0" layoutY="290.0" onAction="#loginButtonOnAction" prefHeight="32.0" prefWidth="71.0" style="-fx-background-color: #ccccdf;" text="Login" />
+      <JFXDrawer fx:id="signUpDrawer" defaultDrawerSize="391.0" layoutX="-1.0" layoutY="-2.0" prefHeight="507.0" prefWidth="392.0" />
+      <NumberValidator fx:id="numValidator" message="only numbers allowed" />
+      <RequiredFieldValidator fx:id="requiredValidator" message="Please fill required field" />
    </children>
 </AnchorPane>
