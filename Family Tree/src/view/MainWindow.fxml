@@ -5,7 +5,7 @@
 <?import com.jfoenix.controls.JFXHamburger?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="createButton" prefHeight="468.0" prefWidth="705.0" style="-fx-background-color: #455a64;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainWindow">
+<AnchorPane prefHeight="468.0" prefWidth="705.0" style="-fx-background-color: #455a64;" stylesheets="@../resources/styleSheets/menuButtons.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainWindow">
    <children>
       <JFXDrawer fx:id="userDrawer" defaultDrawerSize="165.0" layoutX="33.0" prefHeight="468.0" prefWidth="165.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
       <JFXButton id="createButton" fx:id="buildButton" buttonType="RAISED" layoutX="181.0" layoutY="65.0" onAction="#buildButtonOnAction" prefHeight="185.0" prefWidth="510.0" stylesheets="@../resources/styleSheets/menuButtons.css" text=" " />

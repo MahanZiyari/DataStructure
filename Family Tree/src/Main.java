@@ -1,3 +1,4 @@
+import controller.Login;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -8,10 +9,13 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("view/login.fxml"));
-        primaryStage.setTitle("Hello World");
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("view/login.fxml"));
+        Parent root = loader.load();
+        Login login = loader.getController();
+        primaryStage.setTitle("My Family Tree");
         primaryStage.setScene(new Scene(root, 835, 505));
         primaryStage.show();
+        login.setPrimaryStage(primaryStage);
     }
 
 

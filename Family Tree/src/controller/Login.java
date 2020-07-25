@@ -9,9 +9,12 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
@@ -43,6 +46,11 @@ public class Login implements Initializable {
     @FXML
     private RequiredFieldValidator requiredValidator;
     private SignUpDrawer drawerController;
+    private Stage primaryStage;
+
+    public void setPrimaryStage(Stage primaryStage) {
+        this.primaryStage = primaryStage;
+    }
 
     @FXML
     void familyTextFieldOnKeyTyped(KeyEvent event) {
@@ -51,6 +59,18 @@ public class Login implements Initializable {
 
     @FXML
     void loginButtonOnAction(ActionEvent event) {
+        Stage stage = new Stage();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/MainWindow.fxml"));
+        Parent root = null;
+        try {
+            root = loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        stage.setTitle("My Family Tree");
+        stage.setScene(new Scene(root, 705, 468));
+        primaryStage.close();
+        stage.show();
     }
 
     @FXML
