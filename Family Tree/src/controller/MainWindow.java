@@ -3,11 +3,19 @@ package controller;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDrawer;
 import com.jfoenix.controls.JFXHamburger;
+import com.jfoenix.transitions.hamburger.HamburgerBackArrowBasicTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.VBox;
 
-public class MainWindow {
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class MainWindow implements Initializable {
 
     @FXML
     private JFXDrawer userDrawer;
@@ -29,6 +37,7 @@ public class MainWindow {
 
     @FXML
     private JFXButton closeRelationButton;
+    private HamburgerBackArrowBasicTransition backArrowBasicTransition;
 
     @FXML
     void buildButtonOnAction(ActionEvent event) {
@@ -57,7 +66,25 @@ public class MainWindow {
 
     @FXML
     void userBurgerOnMouseClicked(MouseEvent event) {
-
+        backArrowBasicTransition.setRate(backArrowBasicTransition.getRate() * -1);
+        backArrowBasicTransition.play();
+        if (userDrawer.isOpened()) {
+            userDrawer.close();
+        } else {
+            userDrawer.open();
+        }
     }
 
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        backArrowBasicTransition = new HamburgerBackArrowBasicTransition(userBurger);
+        backArrowBasicTransition.setRate(-1);
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/userPanel.fxml"));
+        try {
+            VBox userPanel = loader.load();
+            userDrawer.setSidePane(userPanel);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

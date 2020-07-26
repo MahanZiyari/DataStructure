@@ -8,12 +8,13 @@
     -fx-blend-mode: overlay;
 }
 
-.button{
+#buttons{
     -fx-background-color: #616161;
     -fx-background-radius: 20px;
     -fx-border-radius: 20px;
+    -fx-text-fill: White;
 }
 
-.button:hover{
+#buttons:hover{
     -fx-blend-mode: overlay;
 }

@@ -1,0 +1,7 @@
+#panelButton{
+    -fx-background-color: #e0e0e0;
+}
+
+#panelButton:hover{
+    -fx-background-color: #64dd17;
+}

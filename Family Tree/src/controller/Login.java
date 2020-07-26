@@ -94,7 +94,6 @@ public class Login implements Initializable {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/signUpDrawer.fxml"));
             anchorPane = loader.load();
             drawerController = loader.getController();
-            //System.out.println("drawerController = " + drawerController);
         } catch (IOException e) {
             e.printStackTrace();
         }

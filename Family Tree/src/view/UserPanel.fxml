@@ -1,14 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="controller.UserPanel"
-            prefHeight="400.0" prefWidth="600.0">
 
-</AnchorPane>
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="468.0" prefWidth="165.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.UserPanel">
+   <children>
+      <ImageView fitHeight="180.0" fitWidth="165.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resources/pictures/profile.png" />
+         </image>
+      </ImageView>
+      <JFXButton id="panelButton" fx:id="settingButton" onAction="#settingButtonOnAction" prefHeight="86.0" prefWidth="213.0" stylesheets="@../resources/styleSheets/userPanel.css" text="Settings">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton id="panelButton" fx:id="logOutButtons" layoutX="10.0" layoutY="190.0" onAction="#logOutButtonsOnAction" prefHeight="86.0" prefWidth="213.0" stylesheets="@../resources/styleSheets/userPanel.css" text="Log out">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </JFXButton>
+   </children>
+</VBox>

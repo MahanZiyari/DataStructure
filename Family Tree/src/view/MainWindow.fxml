@@ -4,15 +4,28 @@
 <?import com.jfoenix.controls.JFXDrawer?>
 <?import com.jfoenix.controls.JFXHamburger?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="468.0" prefWidth="705.0" style="-fx-background-color: #455a64;" stylesheets="@../resources/styleSheets/menuButtons.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainWindow">
    <children>
       <JFXDrawer fx:id="userDrawer" defaultDrawerSize="165.0" layoutX="33.0" prefHeight="468.0" prefWidth="165.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
       <JFXButton id="createButton" fx:id="buildButton" buttonType="RAISED" layoutX="181.0" layoutY="65.0" onAction="#buildButtonOnAction" prefHeight="185.0" prefWidth="510.0" stylesheets="@../resources/styleSheets/menuButtons.css" text=" " />
       <JFXHamburger fx:id="userBurger" layoutX="661.0" layoutY="14.0" onMouseClicked="#userBurgerOnMouseClicked" />
-      <JFXButton fx:id="findRelationsButton" buttonType="RAISED" layoutX="181.0" layoutY="260.0" onAction="#findRelationsButtonOnAction" prefHeight="86.0" prefWidth="207.0" stylesheets="@../resources/styleSheets/menuButtons.css" text="Finding Relations" />
-      <JFXButton fx:id="childButton" buttonType="RAISED" layoutX="181.0" layoutY="362.0" onAction="#childButtonOnAction" prefHeight="86.0" prefWidth="207.0" stylesheets="@../resources/styleSheets/menuButtons.css" text="Child counting" />
-      <JFXButton fx:id="specRelationButton" buttonType="RAISED" layoutX="484.0" layoutY="260.0" onAction="#specRelationButtonOnAction" prefHeight="86.0" prefWidth="207.0" stylesheets="@../resources/styleSheets/menuButtons.css" text="Finding Specefic relation" />
-      <JFXButton fx:id="closeRelationButton" buttonType="RAISED" layoutX="484.0" layoutY="362.0" onAction="#closeRelationButtonOnAction" prefHeight="86.0" prefWidth="207.0" stylesheets="@../resources/styleSheets/menuButtons.css" text="Closest Relationship" />
+      <JFXButton id="buttons" fx:id="findRelationsButton" buttonType="RAISED" layoutX="181.0" layoutY="260.0" onAction="#findRelationsButtonOnAction" prefHeight="86.0" prefWidth="207.0" stylesheets="@../resources/styleSheets/menuButtons.css" text="Finding Relations">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></JFXButton>
+      <JFXButton id="buttons" fx:id="childButton" buttonType="RAISED" layoutX="181.0" layoutY="362.0" onAction="#childButtonOnAction" prefHeight="86.0" prefWidth="207.0" stylesheets="@../resources/styleSheets/menuButtons.css" text="Child counting">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></JFXButton>
+      <JFXButton id="buttons" fx:id="specRelationButton" buttonType="RAISED" layoutX="484.0" layoutY="260.0" onAction="#specRelationButtonOnAction" prefHeight="86.0" prefWidth="207.0" stylesheets="@../resources/styleSheets/menuButtons.css" text="Finding Specefic relation">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></JFXButton>
+      <JFXButton id="buttons" fx:id="closeRelationButton" buttonType="RAISED" layoutX="484.0" layoutY="362.0" onAction="#closeRelationButtonOnAction" prefHeight="86.0" prefWidth="207.0" stylesheets="@../resources/styleSheets/menuButtons.css" text="Closest Relationship">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></JFXButton>
    </children>
 </AnchorPane>
