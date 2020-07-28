@@ -1,5 +1,9 @@
 package model.repository;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import model.entity.Node;
+
 import java.sql.*;
 
 public class PersonRepository implements AutoCloseable {
@@ -19,6 +23,53 @@ public class PersonRepository implements AutoCloseable {
         creatationStatment.executeUpdate(statement);
     }
 
+    public void insert(Node node, String family) throws Exception{
+        String statment = "insert into " + family + "(id, name, lastName, birth, death, gender, partner, father) "
+                + "values (?, ?, ?, ?, ?, ?, ?, ?)";
+        preparedStatement = connection.prepareStatement(statment);
+        preparedStatement.setString(1, node.getId());
+        preparedStatement.setString(2, node.getName());
+        preparedStatement.setString(3, node.getLastName());
+        preparedStatement.setString(4, node.getDateOfBirth());
+        preparedStatement.setString(5, node.getDateOfDeath());
+        preparedStatement.setString(6, node.getGender());
+        preparedStatement.setString(7, node.partners.get(0).getId());
+        preparedStatement.setString(8, node.getFather());
+        preparedStatement.executeUpdate();
+    }
+
+    public void update(Node node, String family) throws Exception{
+        String statement = "update " + family + "set name = ?, lastName = ?, birth = ?, death = ?, gender = ?, partner = ?, " +
+                "father = ? where id = ?";
+        preparedStatement = connection.prepareStatement(statement);
+        preparedStatement.setString(1, node.getName());
+        preparedStatement.setString(2, node.getLastName());
+        preparedStatement.setString(3, node.getDateOfBirth());
+        preparedStatement.setString(4, node.getDateOfDeath());
+        preparedStatement.setString(5, node.getGender());
+        preparedStatement.setString(6, node.partners.get(0).getId());
+        preparedStatement.setString(7, node.getFather());
+        preparedStatement.setString(8, node.getId());
+        preparedStatement.executeUpdate();
+    }
+
+    public void delete(Node node, String family) throws Exception{
+        String statement = "delete from " + family + "where id = ?";
+        preparedStatement = connection.prepareStatement(statement);
+        preparedStatement.setString(1, node.getId());
+        preparedStatement.executeUpdate();
+    }
+
+    public ObservableList<Node> select(String family) throws Exception{
+        String statement = "select * from" + family;
+        preparedStatement = connection.prepareStatement(statement);
+        ResultSet resultSet = preparedStatement.executeQuery();
+        ObservableList<Node> familyMembers = FXCollections.observableArrayList();
+        while (resultSet.next()){
+            Node node = new Node();
+        }
+    }
+
 
 
 
@@ -30,6 +81,7 @@ public class PersonRepository implements AutoCloseable {
 
     @Override
     public void close() throws Exception {
-
+        connection.close();
+        preparedStatement.close();
     }
 }
