@@ -66,18 +66,27 @@ public class PersonRepository implements AutoCloseable {
         ResultSet resultSet = preparedStatement.executeQuery();
         ObservableList<Node> familyMembers = FXCollections.observableArrayList();
         while (resultSet.next()){
-            Node node = new Node();
+            Node node = new Node()
+                    .setId(resultSet.getString("id"))
+                    .setName(resultSet.getString("name"))
+                    .setLastName(resultSet.getString("lastName"))
+                    .setGender(resultSet.getString("gender"))
+                    .setDateOfBirth(resultSet.getString("birth"))
+                    .setDateOfDeath(resultSet.getString("death"))
+                    .setFather(resultSet.getString("father"))
+                    .partners.get(0).setId(resultSet.getString("partner"));
+            familyMembers.add(node);
         }
+        return familyMembers;
     }
 
+    public void commit() throws Exception{
+        connection.commit();
+    }
 
-
-
-
-
-
-
-
+    public void rollBack() throws Exception{
+        connection.rollback();
+    }
 
     @Override
     public void close() throws Exception {

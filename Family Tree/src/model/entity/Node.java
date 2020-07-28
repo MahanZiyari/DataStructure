@@ -19,6 +19,8 @@ public class Node {
         this.father = new SimpleStringProperty(father);
     }
 
+    public Node() {
+    }
 
     public String getFather() {
         return father.get();
@@ -28,8 +30,9 @@ public class Node {
         return father;
     }
 
-    public void setFather(String father) {
+    public Node setFather(String father) {
         this.father.set(father);
+        return this;
     }
 
     public String getId() {
@@ -40,8 +43,9 @@ public class Node {
         return id;
     }
 
-    public void setId(String id) {
+    public Node setId(String id) {
         this.id.set(id);
+        return this;
     }
 
     public String getName() {
@@ -52,8 +56,9 @@ public class Node {
         return name;
     }
 
-    public void setName(String name) {
+    public Node setName(String name) {
         this.name.set(name);
+        return this;
     }
 
     public String getLastName() {
@@ -64,8 +69,9 @@ public class Node {
         return lastName;
     }
 
-    public void setLastName(String lastName) {
+    public Node setLastName(String lastName) {
         this.lastName.set(lastName);
+        return this;
     }
 
     public String getDateOfBirth() {
@@ -76,8 +82,9 @@ public class Node {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(String dateOfBirth) {
+    public Node setDateOfBirth(String dateOfBirth) {
         this.dateOfBirth.set(dateOfBirth);
+        return this;
     }
 
     public String getDateOfDeath() {
@@ -88,8 +95,9 @@ public class Node {
         return dateOfDeath;
     }
 
-    public void setDateOfDeath(String dateOfDeath) {
+    public Node setDateOfDeath(String dateOfDeath) {
         this.dateOfDeath.set(dateOfDeath);
+        return this;
     }
 
     public String getGender() {
@@ -100,8 +108,9 @@ public class Node {
         return gender;
     }
 
-    public void setGender(String gender) {
+    public Node setGender(String gender) {
         this.gender.set(gender);
+        return this;
     }
 
     public String caculateAge(){
