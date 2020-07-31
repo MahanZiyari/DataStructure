@@ -5,7 +5,6 @@ import com.jfoenix.controls.JFXDrawer;
 import com.jfoenix.controls.JFXTextField;
 import com.jfoenix.validation.NumberValidator;
 import com.jfoenix.validation.RequiredFieldValidator;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,13 +15,10 @@ import javafx.scene.control.Hyperlink;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import model.entity.Node;
-import model.service.PersonService;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.regex.Pattern;
 
 public class Login implements Initializable {
 
@@ -51,7 +47,6 @@ public class Login implements Initializable {
     private RequiredFieldValidator requiredValidator;
     private SignUpDrawer drawerController;
     private Stage primaryStage;
-    private ObservableList<Node> familyMembers;
 
     public void setPrimaryStage(Stage primaryStage) {
         this.primaryStage = primaryStage;
@@ -74,16 +69,8 @@ public class Login implements Initializable {
         }
         stage.setTitle("My Family Tree");
         stage.setScene(new Scene(root, 705, 468));
-        //primaryStage.close();
-        //stage.show();
-        if (checkInput()){
-            try {
-                familyMembers = PersonService.getInstance().report(familyTextField.getText());
-            } catch (Exception e) {
-                System.out.println(e.getMessage());
-            }
-
-        }
+        primaryStage.close();
+        stage.show();
     }
 
     @FXML
@@ -100,7 +87,7 @@ public class Login implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         nameTextField.getValidators().addAll(requiredValidator);
-        familyTextField.getValidators().addAll(requiredValidator);
+        familyTextField.getValidators().addAll(numValidator, requiredValidator);
 
         AnchorPane anchorPane = null;
         try {
@@ -111,17 +98,5 @@ public class Login implements Initializable {
             e.printStackTrace();
         }
         signUpDrawer.setSidePane(anchorPane);
-    }
-
-    private boolean checkInput(){
-        if (!nameTextField.validate() || !familyTextField.validate())
-            return false;
-        else if (!Pattern.matches("\\D*", nameTextField.getText()) || !Pattern.matches("\\D*", familyTextField.getText())){
-            return false;
-        }
-        else if (!Pattern.matches("\\w*", nameTextField.getText()) || !Pattern.matches("\\w*", familyTextField.getText())){
-            return false;
-        }
-        return true;
     }
 }
