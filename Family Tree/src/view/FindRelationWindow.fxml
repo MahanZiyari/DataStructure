@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXToggleButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #cfcfcf;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FindRelationWindow">
+   <children>
+      <JFXComboBox fx:id="sourceComboBox" layoutX="48.0" layoutY="128.0" prefHeight="25.0" prefWidth="187.0" promptText="Source Id" unFocusColor="#cd1a1a" />
+      <JFXComboBox fx:id="targetButton" layoutX="366.0" layoutY="128.0" onAction="#swapButtonOnAction" prefHeight="25.0" prefWidth="187.0" promptText="Target ID" unFocusColor="#cd1a1a" />
+      <Pane layoutX="200.0" layoutY="100.0" prefHeight="14.0" prefWidth="600.0" style="-fx-background-color: #002171;" AnchorPane.bottomAnchor="386.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <Pane layoutX="200.0" layoutY="14.0" prefHeight="68.0" prefWidth="600.0" style="-fx-background-color: #0d47a1;" AnchorPane.bottomAnchor="318.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="14.0">
+         <children>
+            <Label layoutX="154.0" layoutY="15.0" text="Relation Finder" textFill="WHITE">
+               <font>
+                  <Font name="Bank Gothic Light BT" size="34.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <JFXButton fx:id="swapButton" buttonType="RAISED" layoutX="278.0" layoutY="128.0" onAction="#swapButtonOnAction" style="-fx-background-color: #0d47a1;" text="Swap" textFill="WHITE" />
+      <JFXToggleButton fx:id="sourceLock" layoutX="35.0" layoutY="161.0" onAction="#sourceLockOnAction" prefHeight="58.0" prefWidth="98.0" text="Lock" toggleColor="#002171" toggleLineColor="#5472d3" />
+      <JFXToggleButton fx:id="targetLock" layoutX="349.0" layoutY="161.0" onAction="#targetLockOnAction" prefHeight="58.0" prefWidth="98.0" text="Lock" toggleColor="#002171" toggleLineColor="#5472d3" />
+      <JFXButton fx:id="findButton" buttonType="RAISED" layoutX="506.0" layoutY="361.0" onAction="#findButtonOnAction" prefHeight="25.0" prefWidth="80.0" style="-fx-background-color: #0d47a1;" text="Find" textFill="WHITE" />
+      <Label fx:id="resultLabel" layoutX="48.0" layoutY="260.0" text="Result">
+         <font>
+            <Font name="Bank Gothic Light BT" size="34.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
