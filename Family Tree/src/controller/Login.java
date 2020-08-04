@@ -119,6 +119,7 @@ public class Login implements Initializable {
 
     @FXML
     void signupHyperLinkOnAction(ActionEvent event) {
+        drawerController.setPrimaryStage(primaryStage);
         signUpDrawer.open();
         drawerController.setDrawer(signUpDrawer);
     }
@@ -141,7 +142,7 @@ public class Login implements Initializable {
 
     private boolean checkInput(){
         Alert alert = new Alert(Alert.AlertType.WARNING);
-        if (!idTextField.validate() || !familyTextField.validate())
+        if (!idTextField.validate() | !familyTextField.validate())
             return false;
         else if (!Pattern.matches("\\D*", familyTextField.getText())){
             alert.setHeaderText("Invalid Input");

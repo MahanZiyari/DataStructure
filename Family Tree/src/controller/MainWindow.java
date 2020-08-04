@@ -1,6 +1,7 @@
 package controller;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXDialog;
 import com.jfoenix.controls.JFXDrawer;
 import com.jfoenix.controls.JFXHamburger;
 import com.jfoenix.transitions.hamburger.HamburgerBackArrowBasicTransition;
@@ -8,8 +9,12 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 import model.entity.Node;
 
 import java.io.IOException;
@@ -60,12 +65,24 @@ public class MainWindow implements Initializable {
 
     @FXML
     void buildButtonOnAction(ActionEvent event) {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/BuildWindow.fxml"));
+        Stage stage = new Stage();
+        Parent parent = null;
+        try {
+             parent = loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        stage.setTitle("Build your family tree");
+        stage.setScene(new Scene(parent, 705, 468));
+        stage.show();
 
     }
 
     @FXML
     void childButtonOnAction(ActionEvent event) {
-
+        JFXDialog dialog = new JFXDialog();
+        dialog.setContent(new Label("the most belonged child is "));
     }
 
     @FXML
@@ -75,12 +92,32 @@ public class MainWindow implements Initializable {
 
     @FXML
     void findRelationsButtonOnAction(ActionEvent event) {
-
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/FindRelationWindow.fxml"));
+        Stage stage = new Stage();
+        Parent parent = null;
+        try {
+            parent = loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        //stage.setTitle("Build your family tree");
+        stage.setScene(new Scene(parent, 705, 468));
+        stage.show();
     }
 
     @FXML
     void specRelationButtonOnAction(ActionEvent event) {
-
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/searchRelationWindow.fxml"));
+        Stage stage = new Stage();
+        Parent parent = null;
+        try {
+            parent = loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        //stage.setTitle("Build your family tree");
+        stage.setScene(new Scene(parent, 705, 468));
+        stage.show();
     }
 
     @FXML
