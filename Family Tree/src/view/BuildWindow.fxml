@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane fx:id="Parent" prefHeight="614.0" prefWidth="961.0" style="-fx-background-color: #dddddd;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.BuildWindow">
+   <children>
+      <JFXTreeTableView fx:id="familyTable" layoutX="14.0" layoutY="14.0" prefHeight="400.0" prefWidth="815.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+         <columns>
+            <TreeTableColumn fx:id="idColumn" onEditCommit="#idCoulumnOnEditommit" prefWidth="135.0" text="ID" />
+            <TreeTableColumn fx:id="nameColumn" onEditCommit="#nameColumnOnEditCommit" prefWidth="123.0" text="Name" />
+            <TreeTableColumn fx:id="lastNameColumn" onEditCommit="#lastNameColumnOnEditCommit" prefWidth="116.0" text="LastName" />
+            <TreeTableColumn fx:id="birthColumn" onEditCommit="#birthColumnOnEditCommit" prefWidth="114.0" text="BirthDay" />
+            <TreeTableColumn fx:id="deathColumn" onEditCommit="#deathColumnOnEditCommit" prefWidth="114.0" text="Death" />
+            <TreeTableColumn fx:id="genderColumn" onEditCommit="#deathColumnOnEditCommit" prefWidth="65.0" text="Gender" />
+            <TreeTableColumn fx:id="partnerColumn" onEditCommit="#partnerColumnOnEditCommit" prefWidth="127.0" text="Partnesr" />
+            <TreeTableColumn fx:id="fatherColumn" onEditCommit="#fatherColumnOnEditCommit" prefWidth="136.0" text="Father" />
+         </columns>
+      </JFXTreeTableView>
+      <JFXButton fx:id="mainMenuButton" buttonType="RAISED" layoutX="748.0" layoutY="560.0" onAction="#mainMenuButtonOnAction" prefHeight="40.0" prefWidth="92.0" style="-fx-background-color: #223377;" text="Main Menu" textFill="WHITE" AnchorPane.rightAnchor="14.0" />
+      <JFXButton fx:id="graphButton" buttonType="RAISED" layoutX="14.0" layoutY="560.0" onAction="#graphButtonOnAction" prefHeight="40.0" prefWidth="92.0" style="-fx-background-color: #223377;" text="Graph View" textFill="WHITE" />
+      <JFXButton fx:id="refreshButton" buttonType="RAISED" layoutX="759.0" layoutY="417.0" onAction="#refreshButtonOnAction" prefHeight="33.0" prefWidth="81.0" style="-fx-background-color: #223377;" text="Refresh" textFill="WHITE" AnchorPane.rightAnchor="14.0" />
+      <JFXRadioButton fx:id="hierarchyRadioButton" layoutX="14.0" layoutY="425.0" onAction="#hierarchyRadioButtonOnAction" text="Hierarchy" />
+      <JFXButton fx:id="addButton" buttonType="RAISED" layoutX="677.0" layoutY="417.0" onAction="#addButtonOnAction" prefHeight="33.0" prefWidth="81.0" style="-fx-background-color: #223377;" text="Add" textFill="WHITE" />
+      <JFXButton fx:id="removeButton" buttonType="RAISED" layoutX="773.0" layoutY="417.0" onAction="#removeButtonOnAction" prefHeight="33.0" prefWidth="81.0" style="-fx-background-color: #223377;" text="Remove" textFill="WHITE" />
+   </children>
+</AnchorPane>

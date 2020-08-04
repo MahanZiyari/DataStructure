@@ -10,6 +10,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
+import model.entity.Node;
 
 import java.io.IOException;
 import java.net.URL;
@@ -38,6 +39,24 @@ public class MainWindow implements Initializable {
     @FXML
     private JFXButton closeRelationButton;
     private HamburgerBackArrowBasicTransition backArrowBasicTransition;
+    private Node currentPerson;
+    private String currentFamily;
+
+    public Node getCurrentPerson() {
+        return currentPerson;
+    }
+
+    public void setCurrentPerson(Node currentPerson) {
+        this.currentPerson = currentPerson;
+    }
+
+    public String getCurrentFamily() {
+        return currentFamily;
+    }
+
+    public void setCurrentFamily(String currentFamily) {
+        this.currentFamily = currentFamily;
+    }
 
     @FXML
     void buildButtonOnAction(ActionEvent event) {
