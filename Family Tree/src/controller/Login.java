@@ -80,6 +80,7 @@ public class Login implements Initializable {
             try {
                 familyMembers = PersonService.getInstance().report(familyTextField.getText());
             } catch (Exception e) {
+                e.printStackTrace();
                 System.out.println(e.getMessage());
             }
 

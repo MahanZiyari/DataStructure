@@ -12,7 +12,7 @@ public class PersonRepository implements AutoCloseable {
 
     public PersonRepository() throws ClassNotFoundException, SQLException {
         Class.forName("oracle.jdbc.driver.OracleDriver");
-        connection = DriverManager.getConnection("jdbc:oracle:thin@localhost:1521:xe", "mahan","admin");
+        connection = DriverManager.getConnection("jdbc:oracle:thin;@localhost:1521:xe", "familyTree","admin");
         connection.setAutoCommit(false);
     }
 
