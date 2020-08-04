@@ -111,4 +111,8 @@ public class SignUpDrawer implements Initializable {
         Alert alert = new Alert(Alert.AlertType.WARNING);
         return false;
     }
+
+    public void familyTextFieldOnKeyTyped(KeyEvent keyEvent) {
+
+    }
 }

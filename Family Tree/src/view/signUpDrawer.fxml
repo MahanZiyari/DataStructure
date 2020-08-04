@@ -31,5 +31,6 @@
       <NumberValidator fx:id="numberValidator" layoutX="415.0" layoutY="481.0" message="Only numbers allowed" />
       <RequiredFieldValidator fx:id="requiredFieldValidator" layoutX="351.0" layoutY="469.0" message="Please fill required field" />
       <Hyperlink fx:id="loginHyperLink" layoutX="141.0" layoutY="457.0" onAction="#loginHyperLinkOnAction" style="-fx-text-fill: #000000;" text="Already have an account?" />
+      <JFXTextField fx:id="familyTextField" labelFloat="true" layoutX="230.0" layoutY="240.0" onKeyTyped="#familyTextFieldOnKeyTyped" prefHeight="25.0" prefWidth="121.0" promptText="FamilyName" />
    </children>
 </AnchorPane>
