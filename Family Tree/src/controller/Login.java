@@ -12,6 +12,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
@@ -30,7 +31,7 @@ public class Login implements Initializable {
     private AnchorPane parent;
 
     @FXML
-    private JFXTextField nameTextField;
+    private JFXTextField idTextField;
 
     @FXML
     private JFXTextField familyTextField;
@@ -64,32 +65,56 @@ public class Login implements Initializable {
 
     @FXML
     void loginButtonOnAction(ActionEvent event) {
+        boolean error = false;
         Stage stage = new Stage();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/MainWindow.fxml"));
+        MainWindow mainWindowController = null;
         Parent root = null;
         try {
             root = loader.load();
+            mainWindowController = loader.getController();
         } catch (IOException e) {
             e.printStackTrace();
         }
         stage.setTitle("My Family Tree");
         stage.setScene(new Scene(root, 705, 468));
-        //primaryStage.close();
-        //stage.show();
         if (checkInput()){
             try {
                 familyMembers = PersonService.getInstance().report(familyTextField.getText());
             } catch (Exception e) {
-                e.printStackTrace();
-                System.out.println(e.getMessage());
+                error = true;
+                Alert notFoundAlert = new Alert(Alert.AlertType.WARNING);
+                notFoundAlert.setContentText(e.getMessage());
+                notFoundAlert.setHeaderText("Table Not Found");
+                notFoundAlert.show();
             }
+            if (!error && personFinder(familyMembers) != null){
+                mainWindowController.setCurrentPerson(personFinder(familyMembers));
+                mainWindowController.setCurrentFamily(familyTextField.getText());
+                primaryStage.close();
+                stage.show();
+            }
+
 
         }
     }
 
+    private Node personFinder(ObservableList<Node> familyMembers){
+        for (int i = 0; i < familyMembers.size(); i++){
+            if (familyMembers.get(i).getId().equalsIgnoreCase(idTextField.getText())){
+                return familyMembers.get(i);
+            }
+        }
+        Alert notFoundAlert = new Alert(Alert.AlertType.WARNING);
+        notFoundAlert.setContentText("ID or FamilyName is Wrong");
+        notFoundAlert.setHeaderText("User NOt Found");
+        notFoundAlert.show();
+        return null;
+    }
+
     @FXML
-    void nameTextFieldOnKeyTyped(KeyEvent event) {
-        nameTextField.validate();
+    void idTextFieldOnKeyTyped(KeyEvent event) {
+        idTextField.validate();
     }
 
     @FXML
@@ -100,7 +125,7 @@ public class Login implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        nameTextField.getValidators().addAll(requiredValidator);
+        idTextField.getValidators().addAll(requiredValidator, numValidator);
         familyTextField.getValidators().addAll(requiredValidator);
 
         AnchorPane anchorPane = null;
@@ -115,12 +140,25 @@ public class Login implements Initializable {
     }
 
     private boolean checkInput(){
-        if (!nameTextField.validate() || !familyTextField.validate())
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        if (!idTextField.validate() || !familyTextField.validate())
             return false;
-        else if (!Pattern.matches("\\D*", nameTextField.getText()) || !Pattern.matches("\\D*", familyTextField.getText())){
+        else if (!Pattern.matches("\\D*", familyTextField.getText())){
+            alert.setHeaderText("Invalid Input");
+            alert.setContentText("Only numbers and alphabet is allowed");
+            alert.show();
             return false;
         }
-        else if (!Pattern.matches("\\w*", nameTextField.getText()) || !Pattern.matches("\\w*", familyTextField.getText())){
+        else if (!Pattern.matches("\\w*", familyTextField.getText())){
+            alert.setHeaderText("Invalid Input");
+            alert.setContentText("Only numbers and alphabet is allowed");
+            alert.show();
+            return false;
+        }
+        else if (idTextField.getText().length() != 10){
+            alert.setHeaderText("Invalid Input");
+            alert.setContentText("Invalid Id Length (must be 10 digit)");
+            alert.show();
             return false;
         }
         return true;

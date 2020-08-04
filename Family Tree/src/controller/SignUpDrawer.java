@@ -6,6 +6,7 @@ import com.jfoenix.validation.RequiredFieldValidator;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.input.KeyEvent;
 
 import java.net.URL;
@@ -104,5 +105,10 @@ public class SignUpDrawer implements Initializable {
 
     public void loginHyperLinkOnAction(ActionEvent event) {
         drawer.close();
+    }
+
+    private boolean checkInput(){
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        return false;
     }
 }
